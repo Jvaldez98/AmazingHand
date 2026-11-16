@@ -1,0 +1,22 @@
+# Each teammate creates their own environment.
+.venv*/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.env
+.env.*
+!.env.example
+.aws/
+.codex/
+.agents/
+.vscode/
+*.log
+dist/
+build/
+.pio/
+team-release/
+*.zip
+# Machine-specific settings; intentionally shared grasp profiles live in grasps/.
+data/config.yaml

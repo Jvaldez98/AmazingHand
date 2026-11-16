@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "name": "String fingertip pinch",
+  "notes": "Untested starting poses. Middle/ring curl clear; thumb/index pinch the string. Manually align fingertips and tune for string diameter. Angles do not specify grip force.",
+  "servo_ids": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "poses": {
+    "approach": [
+      60,
+      60,
+      95,
+      95,
+      95,
+      95,
+      70,
+      70
+    ],
+    "pinch": [
+      85,
+      85,
+      95,
+      95,
+      95,
+      95,
+      95,
+      95
+    ],
+    "release": [
+      35,
+      35,
+      95,
+      95,
+      95,
+      95,
+      45,
+      45
+    ]
+  }
+}
