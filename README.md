@@ -53,6 +53,42 @@ those commands. Start with mock mode:
 Close the GUI before running hardware teleoperation. Webcam control starts
 disarmed; verify tracking and calibration before arming.
 
+## Tether commands used on this hand
+
+Run these PowerShell commands from the project folder. Close the GUI before
+starting teleoperation; both programs need exclusive access to the USB port.
+Replace `COM4` with the ESP32 port on the computer being used.
+
+With the existing `.venv-teleop` environment:
+
+```powershell
+.\.venv-teleop\Scripts\python.exe .\amazinghand_tether_gui.py
+```
+
+```powershell
+.\.venv-teleop\Scripts\python.exe .\amazing_hand_teleop.py --transport tether --port COM4 --force-webcam --finger-side-gain 0.75 --finger-side-directions -1 -1 -1 --finger-side-ranges 25 12 12
+```
+
+For teammates who ran `setup_windows.bat`, use `.venv-team` instead:
+
+```powershell
+.\.venv-team\Scripts\python.exe .\amazinghand_tether_gui.py
+```
+
+```powershell
+.\.venv-team\Scripts\python.exe .\amazing_hand_teleop.py --transport tether --port COM4 --force-webcam --finger-side-gain 0.75 --finger-side-directions -1 -1 -1 --finger-side-ranges 25 12 12
+```
+
+These are the user's previously used finger-spread settings: gain `0.75`,
+directions `-1 -1 -1`, and pointer/middle/ring sensitivity ranges `25 12 12`.
+They adjust movement mapping and sensitivity, not camera tracking accuracy.
+Verify motion on this physical hand before increasing travel. To preview the
+same mapping without moving hardware, append `--mock --verbose` to the
+teleoperation command.
+
+Hold an open palm facing the camera and press **c** to calibrate, then press
+**Space** to arm. Switching computers does not require reassigning servo IDs.
+
 ## Files and team changes
 
 Share the Python sources, `grasps/`, `teleop_vision/`, tests, firmware, and both
